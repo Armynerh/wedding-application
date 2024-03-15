@@ -79,6 +79,7 @@ In order to run this project you need:
 - Install pip
 - Install Flask
 - Get Bootstrap
+- MySQL
 
 ### Setup
 
@@ -113,11 +114,14 @@ To run the project, execute the following command:
 ```sh
  python3 weddingapp.py  
 ```
+```sh
+ sudo systemctl start mysql
+```
 
 
 ### Deployment
 
-  - [N/A]
+  - [Live link](https://wedding-application.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
