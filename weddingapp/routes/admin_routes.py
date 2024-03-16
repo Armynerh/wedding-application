@@ -63,13 +63,22 @@ def edit(id):
     
     return render_template('admin/edit_gifts.html', deets=deets)
 
-@app.route('/admin/delete/<id>')
-def delet(id):
-    x = db.session.query(Gifts).get(id)
-    db.session.delete(x)
+@app.route('/admin/delete_gift/<id>')
+def delete_gift(id):
+    gift = Gifts.query.get(id)
+    db.session.delete(gift)
     db.session.commit()
-    flash('Gift Deleted') 
+    flash('Gift Deleted')
     return redirect(url_for('manage_gifts'))
+
+@app.route('/admin/delete_guest/<id>')
+def delete_guest(id):
+    guest = Guests.query.get(id)
+    db.session.delete(guest)
+    db.session.commit()
+    flash('Guest Deleted')
+    return redirect(url_for('all_guests'))
+
 @app.route('/admin/all/guests')
 def all_guests():
     #protect this page for only logged in users

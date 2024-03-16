@@ -4,6 +4,7 @@
 <div clsds="col"> 
     <form action="", method="post" >
         <input type="text" name="giftname"  placeholder="giftname">
+        <input type="hidden" name="csrf_token" id="csrf_token" value="{{csrf_token()}}">
         <button class="btn btn-success">Add</button>
     </form>
 
